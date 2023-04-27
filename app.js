@@ -21,7 +21,7 @@ app.get('/', async (req, res) => {
 
 
 // importing Routes
-const order = require("./routes/Order.js")
+const order = require("./routes/order.js")
 const user = require("./routes/user.js")
 
 // usign Routes
