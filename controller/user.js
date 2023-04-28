@@ -7,7 +7,7 @@ exports.registerUser = async (req, res) => {
    try {
       const { name, email, password, avatar } = req.body;
 
-      let user = await User.findOne({ email });
+        let user = await User.findOne({  "email": req.body.email });
 
       if (user) {
          return res.status(500).json({
@@ -50,7 +50,7 @@ exports.loginUser = async (req, res) => {
 
       const { email, password } = req.body;
 
-      let user = await User.findOne({ email }).select("+password");
+        let user = await User.findOne({  "email": req.body.email }).select("+password");
 
       if (!user) {
          return res.status(400).json({
